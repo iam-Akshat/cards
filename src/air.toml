@@ -1,0 +1,11 @@
+[build]
+  cmd = "cd src && go mod download && CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o ../tmp/main ."
+  bin = "./tmp/main"
+  log = "build-errors.log"
+
+[run]
+  dir = "."
+  cmd = "./tmp/main"
+
+[watch]
+  exts = ["go", "tmpl", "ini", "yml", "yaml", "json", "xml", "toml"]
